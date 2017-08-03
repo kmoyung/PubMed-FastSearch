@@ -7,5 +7,7 @@ PubMed is undoubtedly the go-to database for scientific journals, abstracts, and
 ## Important
 *This program was built on Python 3.6. If you have Python 2.x, the program will not work. There is also a required library called BeautifulSoup4, which should be downloaded prior to running.*
 
-## Contact
+* * *
+
+### Contact
 Kevin Moyung: kevinmoyung@gmail.com
