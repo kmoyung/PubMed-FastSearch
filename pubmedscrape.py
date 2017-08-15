@@ -7,13 +7,14 @@ import textwrap
 
 # GUI
 top = tkinter.Tk()
-top.title("Pubmed Fast Search")
+top.title("PubMed Fast Search")
 top.geometry("300x300")
 
 outputon = IntVar()
 
 def search():
 
+    # Take keywords, journal, pdate input from GUI
     keywords = E1.get()
     journal = E2.get()
     pdate = E3.get()
@@ -70,15 +71,41 @@ def search():
         articlepage = requests.get(urlitem)
         articlesoup = BeautifulSoup(articlepage.content, 'html.parser')
 
+        # Get the article title
         title = articlesoup.find_all("h1")
         title = title[1].get_text()
+
+        # Get the journal name/publish date
+        for date in articlesoup.select('div.cit'):
+            jnamedate = date.get_text()
+        
+        # Get the abstract
         abstract = articlesoup.find("abstracttext")
         if abstract is not None:
             abstract = abstract.get_text()
 
+        # Print the current title
         print(title)
+
+        # Print journal name and publish date
+        print(jnamedate)
+
+        # Loop to print out all the authors
+        authorlist = ""
+        for link in articlesoup.select('div.auths a'):
+            author = link.get_text()
+            authorlist += author + ", "
+
+        # Removes the extra comma of the author list
+        authorlist = authorlist[:-2]
+
+        # Print the current list of authors
+        print(authorlist)
+        # Print the abstract, if it exists
         print(abstract)
+        # Print the Pubmed URL
         print(urlitem)
+
     error = Label(top, text = "Search Completed.", fg = "green")
     error.pack()
 
