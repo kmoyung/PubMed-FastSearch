@@ -3,13 +3,21 @@ import requests
 import tkinter
 from tkinter import *
 import sys
-import textwrap
 
 # GUI
 top = tkinter.Tk()
 top.title("PubMed Fast Search")
-top.geometry("300x300")
+top.geometry("400x400")
 
+orig_stdout = sys.stdout
+
+# Error message used to prompt any errors in searching
+Error = Label(top, text = "")
+
+# Output error message
+OutputConfirm = Label(top, fg = 'blue')
+
+# Used to indicate whether or not the output checkbox is checked
 outputon = IntVar()
 
 def search():
@@ -22,6 +30,9 @@ def search():
     # Output results to a file if checkbox is checked
     if outputon.get() == 1:
         outputtext(keywords, journal, pdate)
+    else:
+        # Refresh the output message from last search
+        OutputConfirm.config(text="")
 
     # Set search result url as a list for parsing
     resulturl = []
@@ -30,8 +41,9 @@ def search():
 
     # Check if user entered keywords
     if keywords is "":
-        error = Label(top, text = "You must enter at least one keyword! ", fg = "red")
-        error.pack()
+        Error.config(text= "You must enter at least one keyword!", fg = "red")
+        #error = Label(top, text = "You must enter at least one keyword! ", fg = "red")
+        #error.pack()
         raise Exception("Re-enter keywords")
     else:
         keywords = "+AND+" + keywords
@@ -78,7 +90,7 @@ def search():
         # Get the journal name/publish date
         for date in articlesoup.select('div.cit'):
             jnamedate = date.get_text()
-        
+
         # Get the abstract
         abstract = articlesoup.find("abstracttext")
         if abstract is not None:
@@ -106,14 +118,20 @@ def search():
         # Print the Pubmed URL
         print(urlitem)
 
-    error = Label(top, text = "Search Completed.", fg = "green")
-    error.pack()
+    Error.config(text = "Search completed successfully.", fg = "green")
+
+    if outputon.get() == 1:
+        outputmessage = "Search results have been exported as " + E1.get() + "-" + E2.get() + "-" + E3.get() + ".txt"
+        OutputConfirm.config(text= outputmessage, fg = "blue")
+
+    # Ensures stdout returns back to console after each search
+    sys.stdout.close()
+    sys.stdout = orig_stdout
 
 # Function that saves output as text file
 def outputtext(keywd, jrnl, pdt):
     filename = keywd + '-' + jrnl + '-' + pdt + '.txt'
     sys.stdout = open(filename, 'w')
-
 
 # Keyword form
 L1 = Label(top, text = "Keywords (separate using spaces)")
@@ -144,5 +162,9 @@ submitbutton.pack(pady = 10)
 outputcheck = Checkbutton(top, text = "Check here to output search results to a .txt file", variable = outputon,
                           onvalue = 1, offvalue = 0)
 outputcheck.pack()
+
+Error.pack()
+
+OutputConfirm.pack()
 
 top.mainloop()
