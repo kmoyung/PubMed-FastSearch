@@ -117,6 +117,8 @@ def search():
         print(abstract)
         # Print the Pubmed URL
         print(urlitem)
+        # Add a line between results
+        print(" ")
 
     Error.config(text = "Search completed successfully.", fg = "green")
 
