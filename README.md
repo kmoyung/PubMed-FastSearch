@@ -41,11 +41,15 @@ Run PubMed Fast Search:
 
 ![](https://github.com/kmoyung/PubMed-FastSearch/blob/master/images/Run.PNG)
 
-*If you select output to text file, the text file will be located in the same directory where you ran pubmedfs.py*.
-
 ![](https://github.com/kmoyung/PubMed-FastSearch/blob/master/images/GUI.PNG)
 
+If you would like to output your search results to a text file, click the checkbox:
 
+![](https://github.com/kmoyung/PubMed-FastSearch/blob/master/images/Checkbox_Output.PNG)
+
+You will be prompted to name your file and select a location to save it:
+
+![](https://github.com/kmoyung/PubMed-FastSearch/blob/master/images/Save_File.PNG)
 
 * * *
 
