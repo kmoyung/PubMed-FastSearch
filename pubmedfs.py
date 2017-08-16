@@ -1,3 +1,8 @@
+# PubMed Fast Search v1.0
+# Author: Kevin Moyung
+# Contact: kevinmoyung@gmail.com
+# Acknowledgements: PubMed, BeautifulSoup4, Python
+
 from bs4 import BeautifulSoup
 import requests
 import tkinter
