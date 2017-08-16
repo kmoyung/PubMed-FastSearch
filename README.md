@@ -26,13 +26,19 @@ Before you get started, please install [Beautiful Soup 4](https://www.crummy.com
 
 `python -m pip install beautifulsoup4`
 
+![](https://github.com/kmoyung/PubMed-FastSearch/blob/master/images/Install_BeautifulSoup4.PNG)
+
 We will be using [Tkinter](https://wiki.python.org/moin/TkInter) to launch our GUI. Make sure it's installed or up-to-date (this library is usually pre-installed with Python)
 
 `python -m pip install -update tkinter`
 
+![](https://github.com/kmoyung/PubMed-FastSearch/blob/master/images/Update_Tkinter.PNG)
+
 Run PubMed Fast Search:
 
 `python pubmedfs.py`
+
+![](https://github.com/kmoyung/PubMed-FastSearch/blob/master/images/Run.PNG)
 
 *If you select output to text file, the text file will be located in the same directory where you ran pubmedscrape.py*
 
