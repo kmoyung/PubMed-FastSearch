@@ -12,11 +12,11 @@ Python is a powerful programming language that is used widely in many different 
 1. Download and install [Python 3.x.x](https://www.python.org/downloads/). Make sure you're installing Python 3, not 2!
 2. Once installed, find where your Python.exe file is located. You will need to know the location of that folder.
 
-![](http://github.com/kmoyung/PubMed-FastSearch/images/Finding_Python_Address.PNG)
+![](https://github.com/kmoyung/PubMed-FastSearch/blob/master/images/Finding_Python_Address.PNG)
 
 3. Open your command line (Windows) and enter the following command with your own location to change to the Python directory.
 
-![](http://github.com/kmoyung/PubMed-FastSearch/images/Change_Directory.PNG) 
+![](https://github.com/kmoyung/PubMed-FastSearch/blob/master/images/Change_Directory.PNG) 
 ## Quick Start
 *This program is only supported on Python 3. It will not work for Python 2.x.*
 
