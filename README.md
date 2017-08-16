@@ -32,7 +32,7 @@ We will be using [Tkinter](https://wiki.python.org/moin/TkInter) to launch our G
 
 Run PubMed Fast Search:
 
-`python pubmedscrape.py`
+`python pubmedfs.py`
 
 *If you select output to text file, the text file will be located in the same directory where you ran pubmedscrape.py*
 
