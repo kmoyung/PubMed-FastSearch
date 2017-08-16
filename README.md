@@ -51,7 +51,7 @@ You will be prompted to name your file and select a location to save it:
 
 ![](https://github.com/kmoyung/PubMed-FastSearch/blob/master/images/Save_File.PNG)
 
-## How the program works
+## How the Program Works
 
 This program uses the [NCBI E-Utilities (eutils)](https://www.ncbi.nlm.nih.gov/books/NBK25500/) framework to query the PubMed database for relevant articles using a single URL [(see the section about searching here)](https://www.ncbi.nlm.nih.gov/books/NBK25500/#_chapter1_Searching_a_Database_). This Python program takes advantage of the URL search method and, to make it more user-friendly, I've implemented a graphical user interface library [(Tkinter)](https://wiki.python.org/moin/TkInter). The user can input keywords, a specific journal name, and/or publish year.
 
