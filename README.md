@@ -41,7 +41,7 @@ Run PubMed Fast Search:
 
 ![](https://github.com/kmoyung/PubMed-FastSearch/blob/master/images/Run.PNG)
 
-*If you select output to text file, the text file will be located in the same directory where you ran pubmedscrape.py*.
+*If you select output to text file, the text file will be located in the same directory where you ran pubmedfs.py*.
 
 ![](https://github.com/kmoyung/PubMed-FastSearch/blob/master/images/GUI.PNG)
 
