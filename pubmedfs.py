@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 import tkinter
 from tkinter import *
+from tkinter import filedialog
 import sys
 
 # GUI
@@ -123,7 +124,7 @@ def search():
     Error.config(text = "Search completed successfully.", fg = "green")
 
     if outputon.get() == 1:
-        outputmessage = "Search results have been exported as " + E1.get() + "-" + E2.get() + "-" + E3.get() + ".txt"
+        outputmessage = "Search results have been exported."
         OutputConfirm.config(text= outputmessage, fg = "blue")
         # Ensures stdout returns back to console after each search
         sys.stdout.close()
@@ -131,8 +132,10 @@ def search():
 
 # Function that saves output as text file
 def outputtext(keywd, jrnl, pdt):
-    filename = keywd + '-' + jrnl + '-' + pdt + '.txt'
-    sys.stdout = open(filename, 'w')
+    #filename = keywd + '-' + jrnl + '-' + pdt + '.txt'
+    top.filename = filedialog.asksaveasfilename(initialdir="/", title="Select a place to save results",
+                                                filetypes=(("text files", "*.txt"), ("all files", "*.*")))
+    sys.stdout = open(top.filename + ".txt", 'w')
 
 # Keyword form
 L1 = Label(top, text = "Keywords (separate using spaces)")
