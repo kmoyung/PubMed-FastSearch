@@ -5,7 +5,7 @@ A graphical user interface that will quickly search the entire PubMed database a
 [PubMed](https://www.ncbi.nlm.nih.gov/pubmed/) is undoubtedly the go-to database for scientific journals, abstracts, and other publications. Those familiar with using the search engine know that it only displays the publication title, along with the authors. But what if you wanted to quickly read through the abstracts of each result? Look no further. PubMed Fast Search enables the user to enter keywords, specific journals, and even search a particular publish year. The program then searches the entire Database, and will generate all relevant publications along with their abstracts. There is even an option to export the search result into a text file for quick references.
 
 ## Installing and Running Python
-*This section is for those who are unfamiliar and/or have not used Python on their computers. Please skip to *Quick Start* if you already have Python installed on your computer.*
+*This section is for those who are unfamiliar and/or have not used Python on their computers. Please skip to [Quick Start](https://github.com/kmoyung/PubMed-FastSearch/blob/master/README.md#quick-start) if you already have Python installed on your computer.*
 
 Python is a powerful programming language that is used widely in many different industries and institutions with its popularity growing every day. The following instructions will help you quickly install Python and start using the PubMed Fast Search right away. 
 
