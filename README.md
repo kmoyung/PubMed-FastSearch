@@ -17,6 +17,7 @@ Python is a powerful programming language that is used widely in many different 
 3. Open your command line (Windows) and enter the following command with your own location to change to the Python directory.
 
 ![](https://github.com/kmoyung/PubMed-FastSearch/blob/master/images/Change_Directory.PNG) 
+
 ## Quick Start
 *This program is only supported on Python 3. It will not work for Python 2.x.*
 
@@ -40,7 +41,11 @@ Run PubMed Fast Search:
 
 ![](https://github.com/kmoyung/PubMed-FastSearch/blob/master/images/Run.PNG)
 
-*If you select output to text file, the text file will be located in the same directory where you ran pubmedscrape.py*
+*If you select output to text file, the text file will be located in the same directory where you ran pubmedscrape.py*.
+
+![](https://github.com/kmoyung/PubMed-FastSearch/blob/master/images/GUI.PNG)
+
+
 
 * * *
 
