@@ -1,4 +1,4 @@
-# PubMed Fast Search *by Kevin Moyung*
+# PubMed Fast Search
 A graphical user interface that will quickly search the entire PubMed database and return relevant publications along with their abstracts.
 
 ## Introduction
