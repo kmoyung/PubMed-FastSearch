@@ -1,8 +1,3 @@
-# PubMed Fast Search v1.0
-# Author: Kevin Moyung
-# Contact: kevinmoyung@gmail.com
-# Acknowledgements: PubMed, BeautifulSoup4, Python
-
 from bs4 import BeautifulSoup
 import requests
 import tkinter
@@ -130,10 +125,9 @@ def search():
     if outputon.get() == 1:
         outputmessage = "Search results have been exported as " + E1.get() + "-" + E2.get() + "-" + E3.get() + ".txt"
         OutputConfirm.config(text= outputmessage, fg = "blue")
-
-    # Ensures stdout returns back to console after each search
-    sys.stdout.close()
-    sys.stdout = orig_stdout
+        # Ensures stdout returns back to console after each search
+        sys.stdout.close()
+        sys.stdout = orig_stdout
 
 # Function that saves output as text file
 def outputtext(keywd, jrnl, pdt):
