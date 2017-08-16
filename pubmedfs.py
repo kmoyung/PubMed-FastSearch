@@ -43,8 +43,6 @@ def search():
     # Check if user entered keywords
     if keywords is "":
         Error.config(text= "You must enter at least one keyword!", fg = "red")
-        #error = Label(top, text = "You must enter at least one keyword! ", fg = "red")
-        #error.pack()
         raise Exception("Re-enter keywords")
     else:
         keywords = "+AND+" + keywords
@@ -132,9 +130,10 @@ def search():
 
 # Function that saves output as text file
 def outputtext(keywd, jrnl, pdt):
-    #filename = keywd + '-' + jrnl + '-' + pdt + '.txt'
     top.filename = filedialog.asksaveasfilename(initialdir="/", title="Select a place to save results",
                                                 filetypes=(("text files", "*.txt"), ("all files", "*.*")))
+    if top.filename is "":
+        raise Exception("Please enter a file name")
     sys.stdout = open(top.filename + ".txt", 'w')
 
 # Keyword form
@@ -145,14 +144,14 @@ E1 = Entry(top, bd = 5)
 E1.pack(pady = 5)
 
 # Journal form
-L2 = Label(top, text = "Journal Name (optional)")
+L2 = Label(top, text = "Journal Name (optional/enter only one)")
 L2.pack(pady = 5)
 E2 = Entry(top, bd = 5)
 
 E2.pack(pady = 5)
 
 # Publish year form
-L3 = Label(top, text = "Publish Year (optional)")
+L3 = Label(top, text = "Publish Year (optional/enter only one)")
 L3.pack(pady = 5)
 E3 = Entry(top, bd = 5)
 
