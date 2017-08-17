@@ -60,7 +60,7 @@ You will be prompted to name your file and select a location to save it:
 
 ## How the Program Works
 
-This program uses the [NCBI E-Utilities (eutils)](https://www.ncbi.nlm.nih.gov/books/NBK25500/) framework to query the PubMed database for relevant articles using a single URL [(see the section about searching here)](https://www.ncbi.nlm.nih.gov/books/NBK25500/#_chapter1_Searching_a_Database_). This Python program takes advantage of the URL search method and, to make it more user-friendly, I've implemented a graphical user interface library [(Tkinter)](https://wiki.python.org/moin/TkInter). The user can input keywords, a specific journal name, and/or publish year.
+This program uses the [NCBI E-Utilities (eutils)](https://www.ncbi.nlm.nih.gov/books/NBK25500/) framework to query the PubMed database for relevant articles using a single URL [(see the section about searching here)](https://www.ncbi.nlm.nih.gov/books/NBK25500/#_chapter1_Searching_a_Database_). This Python program takes advantage of the URL search method and, to make it more user-friendly, I've implemented a graphical user interface library [(Tkinter)](https://wiki.python.org/moin/TkInter). The user can input keywords, a specific journal name, and/or publish year. These inputs are then parsed through the script and implemented as a eutils search URL. [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) then accesses the search results page that eutils generates and scrapes the PubMed IDs. These PubMed IDs are each accessed using BeautifulSoup again, this time scraping the title, abstract, author(s), and publication info, returning it to the console (or outputting the returned values to a text file).
 
 * * *
 
