@@ -54,7 +54,7 @@ If you would like to output your search results to a text file, click the checkb
 
 ![](https://github.com/kmoyung/PubMed-FastSearch/blob/master/images/Checkbox_Output.PNG)
 
-You will be prompted to name your file and select a location to save it:
+You will be prompted to name your file and select a location to save the results:
 
 ![](https://github.com/kmoyung/PubMed-FastSearch/blob/master/images/Save_File.PNG)
 
