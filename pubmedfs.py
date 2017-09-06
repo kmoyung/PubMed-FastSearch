@@ -4,6 +4,7 @@ import tkinter
 from tkinter import *
 from tkinter import filedialog
 import sys
+import csv
 
 # GUI
 top = tkinter.Tk()
@@ -136,6 +137,23 @@ def outputtext(keywd, jrnl, pdt):
         raise Exception("Please enter a file name")
     sys.stdout = open(top.filename + ".txt", 'w')
 
+# Converts the default text file result to a CSV file
+def converttocsv():
+    top.textname = filedialog.askopenfilename(initialdir = "/", title ="Select text search results",
+                                              filetypes = (("text files", "*.txt"), ("all files", "*.*")))
+    top.textname = top.textname.replace("/","\\")
+    csvname = top.textname.replace(".txt",".csv")
+
+    with open(top.textname, 'r') as in_file:
+        stripped = (line.strip() for line in in_file)
+        lines = (line for line in stripped if line)
+        grouped = zip(*[lines] * 5)
+        with open(csvname, 'w') as out_file:
+            writer = csv.writer(out_file)
+            writer.writerow(('Title', 'Info', 'Authors', 'Abstract', 'Reference'))
+            writer.writerows(grouped)
+    csvcheck.pack()
+
 # Keyword form
 L1 = Label(top, text = "Keywords (separate using spaces)")
 L1.pack(pady = 5)
@@ -169,5 +187,12 @@ outputcheck.pack()
 Error.pack()
 
 OutputConfirm.pack()
+
+# Convert to CSV button
+csvconvert = Button(top, text = "Convert .txt to .csv", command = converttocsv)
+csvconvert.pack(pady = 10)
+
+# Displays confirmation after successful csv conversion
+csvcheck = Label(top, text = "Converted to CSV", fg = "green")
 
 top.mainloop()
