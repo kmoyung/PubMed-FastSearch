@@ -66,3 +66,5 @@ This program uses the [NCBI E-Utilities (eutils)](https://www.ncbi.nlm.nih.gov/b
 
 ### Contact
 Kevin Moyung: kevinmoyung@gmail.com
+
+*Last updated September 2017*
